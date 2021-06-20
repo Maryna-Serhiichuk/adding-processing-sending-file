@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Task</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script lang="javascript" src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,700&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+
+		<div class="task">
+			<div class="task__wrapper">
+
+				<div class="task__name task__block">
+					<div class="task__title">
+						Место или название отеля
+					</div>
+					<div class="name__local block">
+						<div class="name__local-icon">
+							<img src="img/01.png">
+						</div>
+						<div class="name__local-input">
+							<input type="text" name="local" placeholder="Введите здесь место">
+						</div>
+					</div>
+				</div>
+				<div class="design"></div>
+				<div class="task__date task__block">
+					<div class="date__wrap">
+						<div class="task__title">
+							Заезд
+						</div>
+						<div class="date__from-to">
+							<img src="img/02.png">
+							07 февраля
+						</div>
+					</div>
+					<div class="design"></div>
+					<div class="date__wrap">
+						<div class="task__title">
+							Выезд
+						</div>
+						<div class="date__from-to">
+							22 февраля
+						</div>
+					</div>
+					<div class="date__calendar">
+						<button><img src="img/03.png"></button>
+					</div>
+				</div>
+
+				<div class="design"></div>
+				
+				<div class="task__people task__block">
+					<div class="people__wrap">
+						<div>
+							<div class="task__title">
+								Номера
+							</div>
+							<div class="people__input">
+								<input type="input" id="dateInput-number">
+								<div>
+									<button type="button" onclick="input_val('inc','dateInput-number')"></button>
+									<button type="button" onclick="input_val('dec','dateInput-number')"></button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="people__wrap">
+						<div>
+							<div class="task__title">
+								Взрослые
+							</div>
+							<div class="people__input">
+								<input type="input" id="dateInput-adult">
+								<div>
+									<button type="button" onclick="input_val('inc','dateInput-adult')"></button>
+									<button type="button" onclick="input_val('dec','dateInput-adult')"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="people__wrap">
+						<div>
+							<div class="task__title">
+								Дети
+							</div>
+							<div class="people__input">
+								<input type="input" id="dateInput-child">
+								<div>
+									<button type="button" onclick="input_val('inc','dateInput-child')"></button>
+									<button type="button" onclick="input_val('dec','dateInput-child')"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+						function input_val( dir, elid ) {
+
+							var inputEl = document.getElementById(elid);
+
+							var value = parseInt(inputEl.value, 10);
+							
+								if (isNaN(value))
+									value = 0;
+							    
+								if (dir == "dec")
+									value--;
+								else if (dir == "inc")
+									value++;
+							    
+							inputEl.value = value;
+						}
+					</script>
+				</div>
+				<div class="task__button task__block">
+					<div class="button__plus">
+						<button class="btn-plus">+</button>
+					</div>
+					<div class="button__search">
+						<button class="btn-search">НАЙТИ</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="wrapper">
+			<input id="input-file" type="file" name="file">
+			<label class="input-file" for="input-file">
+				<div class="input-text">Перетащите сюда файл или нажмите чтобы выбрать</div>
+			</label>
+		</div>
+		<div class="info">
+			<table>
+				<!-- <tr class="title"> -->
+					<!-- here -->
+				<!-- </tr> -->
+				<!-- here -->
+			</table>
+		</div>
+
+		<!-- JS -->
+		<script src="js/script.js"></script>
+	</body>                    
+</html>
